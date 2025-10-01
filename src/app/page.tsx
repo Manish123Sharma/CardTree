@@ -1,68 +1,46 @@
 "use client";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import { useContext } from "react";
-import { FormContext } from "../context/FormContext";
-import { useRouter } from "next/navigation";
-import RightPanel from "../component/rightPanel";
 import styles from "../styles/AboutForm.module.css";
+import RightPanel from "@/component/rightPanel";
 
-export default function Step1() {
-    const formContext = useContext(FormContext);
-    const router = useRouter();
-
-    if (!formContext) return null;
-    const { data, setData } = formContext;
-
+export default function Page() {
     return (
-        <div className={styles.layout}>
-            {/* LEFT FORM */}
-            <div className={styles.formContainer}>
-                <div className={styles.stepper}>
-                    <span className={styles.active}>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                </div>
-                <h2>Tell us a bit about yourself</h2>
-                <p className={styles.subtitle}>
-                    We’ll use this info to build your page.
-                </p>
-
+        <div className={styles.container}>
+            {/* Left Form Section */}
+            <div className={styles.formWrapper}>
                 <Formik
-                    initialValues={data}
-                    validationSchema={Yup.object({
-                        firstName: Yup.string().required("Required"),
-                        lastName: Yup.string().required("Required"),
-                        location: Yup.string().required("Required"),
-                        title: Yup.string().required("Required"),
-                        company: Yup.string().required("Required"),
-                    })}
+                    initialValues={{
+                        firstName: "",
+                        lastName: "",
+                        location: "",
+                        title: "",
+                        company: "",
+                    }}
                     onSubmit={(values) => {
-                        setData({ ...data, ...values });
-                        router.push("/contact");
+                        console.log(values);
                     }}
                 >
                     <Form className={styles.form}>
-                        <div className={styles.row}>
-                            <div>
-                                <Field name="firstName" placeholder="First name" />
-                                <ErrorMessage name="firstName" component="div" className={styles.error} />
-                            </div>
-                            <div>
-                                <Field name="lastName" placeholder="Last name" />
-                                <ErrorMessage name="lastName" component="div" className={styles.error} />
-                            </div>
-                        </div>
+                        <h2 className={styles.heading}>Tell us a bit about yourself</h2>
+                        <p className={styles.subheading}>
+                            We’ll use this info to build your page.
+                        </p>
 
-                        <Field name="location" placeholder="Place, City, Country" />
+                        <Field name="firstName" placeholder="First name" className={styles.input} />
+                        <ErrorMessage name="firstName" component="div" className={styles.error} />
+
+                        <Field name="lastName" placeholder="Last name" className={styles.input} />
+                        <ErrorMessage name="lastName" component="div" className={styles.error} />
+
+                        <Field name="location" placeholder="Place, City, Country" className={styles.input} />
                         <ErrorMessage name="location" component="div" className={styles.error} />
 
-                        <Field name="title" placeholder="Marketing Lead" />
+                        <Field name="title" placeholder="Marketing Lead" className={styles.input} />
                         <ErrorMessage name="title" component="div" className={styles.error} />
 
                         <div className={styles.companyWrapper}>
-                            <Field name="company" placeholder="Company" />
-                            <span className={styles.searchIcon}>🔍</span>
+                            <Field name="company" placeholder="Acme" className={styles.input} />
+                            <img src="/globe.svg" alt="Search" className={styles.searchIcon} />
                         </div>
                         <ErrorMessage name="company" component="div" className={styles.error} />
 
@@ -71,8 +49,8 @@ export default function Step1() {
                 </Formik>
             </div>
 
-            {/* RIGHT PANEL */}
-            <div className={styles.rightPanel}>
+            {/* Right Preview Panel */}
+            <div className={styles.previewWrapper}>
                 <RightPanel />
             </div>
         </div>
