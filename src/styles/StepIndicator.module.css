@@ -1,0 +1,53 @@
+.stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    gap: 12px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #d1d5db;
+    /* gray */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+    background: #fff;
+}
+
+.active {
+    background: #0ea5e9;
+    /* blue */
+    border-color: #0ea5e9;
+    color: #fff;
+}
+
+.label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6b7280;
+    text-align: center;
+}
+
+.arrow {
+    font-size: 20px;
+    color: #9ca3af;
+}
+
+.ai {
+    color: red;
+    font-weight: 600;
+}
