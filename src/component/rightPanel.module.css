@@ -1,17 +1,29 @@
 .panel {
-    background: #fafafa;
+    background: #fff;
+    border-radius: 16px;
     padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.header {
+/* Profile Card */
+.profileCard {
+    background: #fafafa;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 1rem;
+}
+
+.profileInfo {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .avatar {
@@ -23,17 +35,80 @@
     justify-content: center;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
 }
 
-.card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+/* Clients */
+.clientCard {
+    background: #fafafa;
     padding: 1rem;
+    border-radius: 12px;
+}
+
+.clientCard h4 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.clientLogos {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
     text-align: center;
+}
+
+.clientLogos div {
+    flex: 1;
+}
+
+.clientLogos p {
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+}
+
+/* Grid of resources */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.bigCard {
+    background: #fafafa;
+    padding: 1rem;
+    border-radius: 12px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.smallCard {
+    background: #fafafa;
+    padding: 1rem;
+    border-radius: 12px;
     font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tags span {
+    background: #eee;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
 }
