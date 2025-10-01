@@ -1,18 +1,28 @@
 .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 100vh;
-    background: #fff;
-    padding: 2rem;
-    gap: 3rem;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    /* overflow: hidden; */
+    /* align-items: start; */
+    /* box-sizing: border-box; */
 }
 
+
 .formWrapper {
+    padding: 48px 64px;
+    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 400px;
-    margin: auto;
+    background: #fff;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    height: 100%;
+    width: 50%;
 }
 
 .heading {
@@ -38,6 +48,30 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 0.95rem;
+    width: 100%;
+}
+
+.name_field{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.fname{
+    margin-right: 5px;
+    width: 50%;
+}
+
+.lname{
+    margin-left: 5px;
+    width: 50%;
+}
+
+.form p{
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0;
 }
 
 .error {
@@ -69,14 +103,24 @@
     font-weight: 600;
     cursor: pointer;
     transition: background 0.2s;
+    width: 100%;
 }
 
 .btn:hover {
     background: navy;
 }
 
-.previewWrapper {
+/* .previewWrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    background: #fff;
+    box-sizing: border-box;
+} */
+
+.previewWrapper {
+    width: 40%;
+    /* margin: 50px; */
+    height: 643px;
+    margin-top: 50px;
 }
