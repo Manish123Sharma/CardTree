@@ -38,20 +38,41 @@ It replicates the Figma design screens provided and implements a multi-step onbo
 
 ## 📂 Project Structure
 
-    ├── public # Static assets
+    ├── .gitignore
+    ├── README.md
+    ├── assets
+        └── Frame 11 (1) 1.png
+    ├── eslint.config.mjs
+    ├── next.config.ts
+    ├── package-lock.json
+    ├── package.json
+    ├── postcss.config.mjs
+    ├── public
+        ├── file.svg
+        ├── globe.svg
+        ├── next.svg
+        ├── vercel.svg
+        └── window.svg
     ├── src
-    │ ├── app
-    │ │ ├── page.tsx # Step 1 - About
-    │ │ ├── contact/page.tsx # Step 2 - Contact Info
-    │ │ └── template/page.tsx # Step 3 - Template Selection
-    │ ├── component
-    │ │ ├── rightPanel.tsx # Common right-side component
-    │ │ └── rightPanel.module.css
-    │ ├── context
-    │ │ └── FormContext.tsx # Context API for global form data
-    │ └── styles
-    │ ├── AboutForm.module.css # Scoped CSS for About form
-    │ └── form.css
+        ├── app
+        │   ├── contact
+        │   │   └── page.tsx
+        │   ├── favicon.ico
+        │   ├── globals.css
+        │   ├── layout.tsx
+        │   ├── page.tsx
+        │   └── template
+        │   │   └── page.tsx
+        ├── component
+        │   └── StepIndicator.tsx
+        ├── context
+        │   └── FormContext.tsx
+        └── styles
+        │   ├── AboutForm.module.css
+        │   ├── Contact.module.css
+        │   ├── StepIndicator.module.css
+        │   └── Template.module.css
+    └── tsconfig.json
 
 ---
 
